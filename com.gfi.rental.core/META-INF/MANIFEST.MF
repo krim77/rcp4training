@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.gfi.rental.core.RentalCoreActivator
 Bundle-Vendor: GFI
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: com.gfi.rental.core
 Bundle-ActivationPolicy: lazy
