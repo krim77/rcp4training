@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core
+Bundle-SymbolicName: com.gfi.rental.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.gfi.rental.core.RentalCoreActivator
+Bundle-Vendor: GFI
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.gfi.rental.core
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: rental.jar,
+ .
+Export-Package: com.gfi.rental.core,
+ com.opcoach.training.rental
