@@ -13,10 +13,14 @@ import org.eclipse.swt.widgets.Label;
 
 import com.gfi.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.Rental;
+import org.eclipse.swt.widgets.Text;
 
 public class RentalPropertyPart {
 	private Label rentedObject;
 	private Label customer;
+	private Group grpDates;
+	private Label startDtae;
+	private Label endDate;
 
 	@Inject
 	public RentalPropertyPart() {
@@ -36,6 +40,24 @@ public class RentalPropertyPart {
 		Label louea = new Label(infoGroup, SWT.NONE);
 		louea.setText("Loué à : ");
 		customer = new Label(infoGroup, SWT.NONE);
+		
+		grpDates = new Group(parent, SWT.NONE);
+		grpDates.setText("Dates");
+		grpDates.setLayout(new GridLayout(2, false));
+		
+		Label lblNewLabel_1 = new Label(grpDates, SWT.NONE);
+		lblNewLabel_1.setText("au : ");
+		
+		startDtae = new Label(grpDates, SWT.NONE);
+		
+		startDtae.setText("New Label");
+		
+		Label lblNewLabel = new Label(grpDates, SWT.NONE);
+		
+		lblNewLabel.setText("Du : ");
+		
+		endDate = new Label(grpDates, SWT.NONE);
+		endDate.setText("New Label");
 		setRental(RentalCoreActivator.getAgency().getRentals().get(0));
 	
 	}
@@ -43,7 +65,8 @@ public class RentalPropertyPart {
 	public void setRental(Rental r) {
 		customer.setText(r.getCustomer().getDisplayName());
 		rentedObject.setText(r.getRentedObject().getName());
+	
+		startDtae.setText(r.getStartDate().toString());
+		endDate.setText(r.getEndDate().toString());
 	}
-	
-	
 }
