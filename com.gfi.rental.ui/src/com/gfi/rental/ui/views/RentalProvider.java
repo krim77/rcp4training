@@ -9,11 +9,12 @@ import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
-import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 
 import com.gfi.rental.ui.Palette;
 import com.gfi.rental.ui.RentalUIConstants;
@@ -66,8 +67,17 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	@Override
 	public Color getForeground(Object element)
 	{
-		return currentPalette == null ? null : currentPalette.getForeground(element);
+		if (currentPalette != null)
+			return currentPalette.getForeground(element);
 		
+		if (element instanceof Customer)
+			return Display.getCurrent().getSystemColor(SWT.COLOR_RED);		
+		if (element instanceof Rental)
+			return Display.getCurrent().getSystemColor(SWT.COLOR_BLUE);		
+		if (element instanceof RentalObject)
+			return Display.getCurrent().getSystemColor(SWT.COLOR_GREEN);		
+		
+		return null;
 	}
 	
 

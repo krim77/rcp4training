@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
@@ -21,18 +20,10 @@ import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.dnd.DND;
-import org.eclipse.swt.dnd.DragSource;
-import org.eclipse.swt.dnd.RTFTransfer;
-import org.eclipse.swt.dnd.TextTransfer;
-import org.eclipse.swt.dnd.Transfer;
-import org.eclipse.swt.dnd.URLTransfer;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
@@ -53,7 +44,7 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	private TreeViewer agencyViewer;
 
 
-	@Inject
+	@Inject @Optional
 	@Named(RENTAL_UI_IMG_REGISTRY)
 	private ImageRegistry imgReg;
 
@@ -67,7 +58,8 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 		comp.setLayout(new GridLayout(2, false));
 
 		Button expandAll = new Button(comp, SWT.FLAT);
-		expandAll.setImage(imgReg.get(IMG_EXPAND_ALL));
+		//expandAll.setImage(imgReg.get(IMG_EXPAND_ALL));
+		expandAll.setText("Expand");
 		expandAll.setToolTipText("Expand agency tree");
 		expandAll.addSelectionListener(new SelectionListener() {
 			@Override
@@ -82,7 +74,9 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 			}
 		});
 		Button collapseAll = new Button(comp, SWT.FLAT);
-		collapseAll.setImage(imgReg.get(IMG_COLLAPSE_ALL));
+		//collapseAll.setImage(imgReg.get(IMG_COLLAPSE_ALL));
+		collapseAll.setText("Collapse");
+
 		collapseAll.setToolTipText("Collapse context nodes");
 		collapseAll.addSelectionListener(new SelectionListener() {
 

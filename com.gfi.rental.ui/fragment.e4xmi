@@ -4,6 +4,9 @@
     <elements xsi:type="basic:PartDescriptor" xmi:id="_7RAOcOuNEeq_OoYh7hwv2A" elementId="com.gfi.rental.ui.partdescriptor.rentalproperty" label="Rental Property" category="Rental" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.views.RentalPropertyPart">
       <tags>View</tags>
     </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_1SkEYOwtEeqZMPCG2Yzgdg" elementId="com.gfi.rental.ui.partdescriptor.agenciesview" label="Agencies view" category="Rental" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.views.RentalAgencyPart">
+      <tags>View</tags>
+    </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_fCKNkOuiEeqmXO6RmN3WQw" featurename="addons" parentElementId="xpath:/">
     <elements xsi:type="application:Addon" xmi:id="_kaztQOuiEeqmXO6RmN3WQw" elementId="com.gfi.rental.ui.addon.0" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.RentalAddon"/>
