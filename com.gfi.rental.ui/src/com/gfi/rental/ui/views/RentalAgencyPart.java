@@ -105,7 +105,7 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 		// Register a popup menu on viewer (MENU_ID is the id of popupmenu in
 		// application model)
-		// menuService.registerContextMenu(agencyViewer.getControl(), MENU_ID);
+		 menuService.registerContextMenu(agencyViewer.getControl(), "com.gfi.rental.ui.popupmenu.agencyview");
 
 		// L'arbre est draggable
 		/*

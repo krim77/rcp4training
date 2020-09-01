@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_pJkvAOuNEeq_OoYh7hwv2A">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_pJkvAOuNEeq_OoYh7hwv2A">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_3S1IsOuNEeq_OoYh7hwv2A" featurename="descriptors" parentElementId="xpath:/">
     <elements xsi:type="basic:PartDescriptor" xmi:id="_7RAOcOuNEeq_OoYh7hwv2A" elementId="com.gfi.rental.ui.partdescriptor.rentalproperty" label="Rental Property" category="Rental" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.views.RentalPropertyPart">
       <tags>View</tags>
     </elements>
     <elements xsi:type="basic:PartDescriptor" xmi:id="_1SkEYOwtEeqZMPCG2Yzgdg" elementId="com.gfi.rental.ui.partdescriptor.agenciesview" label="Agencies view" category="Rental" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.views.RentalAgencyPart">
       <tags>View</tags>
+      <menus xmi:id="_AtqxwOxaEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.menu.0">
+        <tags>ViewMenu</tags>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_DSdCsOxaEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handledmenuitem.helloworld" label="Hello world" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>
+      </menus>
+      <menus xsi:type="menu:PopupMenu" xmi:id="_O_M9sOxaEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.popupmenu.agencyview">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_P6LYMOxaEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handledmenuitem.helloworld" label="Hello world" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>
+      </menus>
+      <toolbar xmi:id="_zepg0OxbEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_1GY6sOxbEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handledtoolitem.0" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" tooltip="Afficher hello world" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>
+      </toolbar>
     </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_fCKNkOuiEeqmXO6RmN3WQw" featurename="addons" parentElementId="xpath:/">
@@ -26,5 +36,15 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_GPCagOxYEeqky9ZjjPAG9w" featurename="handlers" parentElementId="xpath:/">
     <elements xsi:type="commands:Handler" xmi:id="_RBa_AOxYEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handler.0" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.handlers.HelloHandler" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Nkk9UOxbEeqky9ZjjPAG9w" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_Qx-tcOxbEeqky9ZjjPAG9w" elementId="" positionInParent="after=additions" parentId="popup">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_eFLB0OxbEeqky9ZjjPAG9w" elementId="id.helloworldparmc" label="Hello world par mc" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>
+    </elements>
+    <elements xsi:type="menu:MenuContribution" xmi:id="_JDTVEOxcEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.menucontribution.0" positionInParent="after=additions" parentId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_XdJvgOxcEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.menu.extentionmodel" label="Extention model">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_OoD-IOxcEeqky9ZjjPAG9w" elementId="id.helloworld" label="Hello world" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>
+      </children>
+    </elements>
   </fragments>
 </fragment:ModelFragments>
