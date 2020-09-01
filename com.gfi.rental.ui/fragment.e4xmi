@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_pJkvAOuNEeq_OoYh7hwv2A">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:basic_1="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_pJkvAOuNEeq_OoYh7hwv2A">
   <imports xsi:type="commands:Command" xmi:id="_pfSNUOxeEeqky9ZjjPAG9w" elementId="org.eclipse.ui.edit.copy"/>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_3S1IsOuNEeq_OoYh7hwv2A" featurename="descriptors" parentElementId="xpath:/">
     <elements xsi:type="basic:PartDescriptor" xmi:id="_7RAOcOuNEeq_OoYh7hwv2A" elementId="com.gfi.rental.ui.partdescriptor.rentalproperty" label="Rental Property" category="Rental" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.views.RentalPropertyPart">
@@ -14,7 +14,9 @@
       </menus>
       <menus xsi:type="menu:PopupMenu" xmi:id="_O_M9sOxaEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.popupmenu.agencyview">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_P6LYMOxaEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handledmenuitem.helloworld" label="Hello world" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_CWOcQOxgEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handledmenuitem.copycustomer" label="Copy Customer" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Customers.png" command="_pfSNUOxeEeqky9ZjjPAG9w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_CWOcQOxgEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handledmenuitem.copycustomer" label="Copy Customer" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Customers.png" command="_pfSNUOxeEeqky9ZjjPAG9w">
+          <visibleWhen xsi:type="ui:ImperativeExpression" xmi:id="_EnllcOxhEeqky9ZjjPAG9w" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.handlers.CopyCustomerHandler"/>
+        </children>
       </menus>
       <toolbar xmi:id="_zepg0OxbEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.toolbar.0">
         <children xsi:type="menu:HandledToolItem" xmi:id="_1GY6sOxbEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handledtoolitem.0" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" tooltip="Afficher hello world" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>

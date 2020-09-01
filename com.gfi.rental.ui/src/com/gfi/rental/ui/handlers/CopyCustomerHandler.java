@@ -4,6 +4,7 @@ package com.gfi.rental.ui.handlers;
 import javax.inject.Named;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
+import org.eclipse.e4.core.di.annotations.Evaluate;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.dnd.Clipboard;
@@ -31,6 +32,7 @@ public class CopyCustomerHandler {
 	}
 
 	@CanExecute
+	@Evaluate
 	public boolean canExecute(@Named(IServiceConstants.ACTIVE_SELECTION) Object o) {
 
 		return o instanceof Customer;
