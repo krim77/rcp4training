@@ -11,9 +11,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
-import com.gfi.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.Rental;
-import org.eclipse.swt.widgets.Text;
+import com.opcoach.training.rental.RentalAgency;
 
 public class RentalPropertyPart {
 	private Label rentedObject;
@@ -28,7 +27,7 @@ public class RentalPropertyPart {
 	}
 	
 	@PostConstruct
-	public void createContent(Composite parent) {
+	public void createContent(Composite parent, RentalAgency agency) {
 		parent.setLayout(new GridLayout(1, false));
 		Group infoGroup = new Group(parent, SWT.NONE);
 		infoGroup.setLayout(new GridLayout(2,false));
@@ -58,7 +57,7 @@ public class RentalPropertyPart {
 		
 		endDate = new Label(grpDates, SWT.NONE);
 		endDate.setText("New Label");
-		setRental(RentalCoreActivator.getAgency().getRentals().get(0));
+		setRental(agency.getRentals().get(0));
 	
 	}
 	
