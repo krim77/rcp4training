@@ -12,7 +12,7 @@
     <elements xsi:type="application:Addon" xmi:id="_kaztQOuiEeqmXO6RmN3WQw" elementId="com.gfi.rental.ui.addon.0" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.RentalAddon"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_ortV8OxLEeqZMPCG2Yzgdg" featurename="snippets" parentElementId="xpath:/">
-    <elements xsi:type="advanced:Perspective" xmi:id="_sRVY0OxLEeqZMPCG2Yzgdg" elementId="com.gfi.rental.ui.perspective.rentalperspective" accessibilityPhrase="" selectedElement="_vO59MOxLEeqZMPCG2Yzgdg" label="Rental Perspective">
+    <elements xsi:type="advanced:Perspective" xmi:id="_sRVY0OxLEeqZMPCG2Yzgdg" elementId="com.gfi.rental.ui.perspective" accessibilityPhrase="" selectedElement="_vO59MOxLEeqZMPCG2Yzgdg" label="Rental Perspective">
       <children xsi:type="basic_1:PartSashContainer" xmi:id="_vO59MOxLEeqZMPCG2Yzgdg" elementId="com.gfi.rental.ui.partsashcontainer.rentalpscontainer" horizontal="true">
         <children xsi:type="basic_1:PartStack" xmi:id="_KX8nEOxMEeqZMPCG2Yzgdg" elementId="com.gfi.rental.ui.partdescriptor.partstack" containerData="2600">
           <children xsi:type="advanced:Placeholder" xmi:id="_sWIj0OxMEeqZMPCG2Yzgdg" elementId="com.gfi.rental.ui.partdescriptor.agenciesview"/>
