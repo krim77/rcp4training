@@ -6,6 +6,7 @@ import javax.inject.Named;
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Evaluate;
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.RTFTransfer;
@@ -18,7 +19,7 @@ import com.opcoach.training.rental.Customer;
 public class CopyCustomerHandler {
 
 	@Execute
-	public void execute(@Named(IServiceConstants.ACTIVE_SELECTION) Customer c, Display display) {
+	public void execute(@Named(IServiceConstants.ACTIVE_SELECTION) Customer c, Display display, IEventBroker ieb) {
 		Clipboard clipboard = new Clipboard(display);
 		String textData = c.getDisplayName();
 		String rtfData = "{\\rtf1\\b\\i " +textData+"}";
@@ -28,6 +29,8 @@ public class CopyCustomerHandler {
 		Object[] data = new Object[] { textData, rtfData };
 		clipboard.setContents(data, transfers);
 		clipboard.dispose();
+		ieb.send("Customer/copy", c);
+		
 
 	}
 
