@@ -3,7 +3,11 @@ package com.gfi.rental.ui.views;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.inject.Named;
 
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.jface.viewers.ITreeSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -67,5 +71,23 @@ public class RentalPropertyPart {
 	
 		startDtae.setText(r.getStartDate().toString());
 		endDate.setText(r.getEndDate().toString());
+	}
+	
+	@Inject @Optional
+	public void receiveSelection(@Named(IServiceConstants.ACTIVE_SELECTION) Rental r) {
+		setRental(r);
+	}
+	
+	@Inject @Optional
+	public void selectAll(@Named(IServiceConstants.ACTIVE_SELECTION) Object o) {
+		System.out.println("j'ai recu un objet de type :  " + o.getClass().getName());
+
+	}
+	@Inject @Optional
+	public void receiveE3select(@Named(IServiceConstants.ACTIVE_SELECTION) ITreeSelection iss) {
+		if (iss == null || iss.isEmpty()) {
+			return;
+		}
+		System.out.println("j'ai recu  en E3 un objet de type :  " + iss.getFirstElement().getClass().getName());
 	}
 }

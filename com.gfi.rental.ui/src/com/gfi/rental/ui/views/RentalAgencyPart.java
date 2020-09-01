@@ -20,7 +20,9 @@ import org.eclipse.e4.ui.services.IStylingEngine;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
@@ -43,52 +45,47 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 	private TreeViewer agencyViewer;
 
-
-	@Inject @Optional
+	@Inject
+	@Optional
 	@Named(RENTAL_UI_IMG_REGISTRY)
 	private ImageRegistry imgReg;
 
 	@PostConstruct
-	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency, IEclipseContext ctx, EMenuService menuService,
-			@Preference IEclipsePreferences prefs)
-	{
+	public void createContent(Composite parent, @Optional IStylingEngine styleEngine, RentalAgency agency,
+			IEclipseContext ctx, EMenuService menuService, ESelectionService selectionService) {
 		parent.setLayout(new GridLayout(1, false));
 
 		final Composite comp = new Composite(parent, SWT.NONE);
 		comp.setLayout(new GridLayout(2, false));
 
 		Button expandAll = new Button(comp, SWT.FLAT);
-		//expandAll.setImage(imgReg.get(IMG_EXPAND_ALL));
+		// expandAll.setImage(imgReg.get(IMG_EXPAND_ALL));
 		expandAll.setText("Expand");
 		expandAll.setToolTipText("Expand agency tree");
 		expandAll.addSelectionListener(new SelectionListener() {
 			@Override
-			public void widgetSelected(SelectionEvent e)
-			{
+			public void widgetSelected(SelectionEvent e) {
 				agencyViewer.expandAll();
 			}
 
 			@Override
-			public void widgetDefaultSelected(SelectionEvent e)
-			{
+			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
 		Button collapseAll = new Button(comp, SWT.FLAT);
-		//collapseAll.setImage(imgReg.get(IMG_COLLAPSE_ALL));
+		// collapseAll.setImage(imgReg.get(IMG_COLLAPSE_ALL));
 		collapseAll.setText("Collapse");
 
 		collapseAll.setToolTipText("Collapse context nodes");
 		collapseAll.addSelectionListener(new SelectionListener() {
 
 			@Override
-			public void widgetSelected(SelectionEvent e)
-			{
+			public void widgetSelected(SelectionEvent e) {
 				agencyViewer.collapseAll();
 			}
 
 			@Override
-			public void widgetDefaultSelected(SelectionEvent e)
-			{
+			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
 
@@ -108,52 +105,44 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 
 		// Register a popup menu on viewer (MENU_ID is the id of popupmenu in
 		// application model)
-		//menuService.registerContextMenu(agencyViewer.getControl(), MENU_ID);
+		// menuService.registerContextMenu(agencyViewer.getControl(), MENU_ID);
 
 		// L'arbre est draggable
 		/*
-		DragSource ds = new DragSource(agencyViewer.getControl(), DND.DROP_COPY);
-		Transfer[] ts = new Transfer[] { TextTransfer.getInstance(), RTFTransfer.getInstance(), URLTransfer.getInstance() };
-		ds.setTransfer(ts);
-		ds.addDragListener(new AgencyTreeDragSourceListener(agencyViewer));
-
-		// Add the e4 styling
-		if (styleEngine != null)
-		{
-			styleEngine.setClassname(agencyViewer.getControl(), "agencyViewer");
-		}*/
+		 * DragSource ds = new DragSource(agencyViewer.getControl(), DND.DROP_COPY);
+		 * Transfer[] ts = new Transfer[] { TextTransfer.getInstance(),
+		 * RTFTransfer.getInstance(), URLTransfer.getInstance() }; ds.setTransfer(ts);
+		 * ds.addDragListener(new AgencyTreeDragSourceListener(agencyViewer));
+		 * 
+		 * // Add the e4 styling if (styleEngine != null) {
+		 * styleEngine.setClassname(agencyViewer.getControl(), "agencyViewer"); }
+		 */
 
 		// attach a selection listener to the viewer
-		/*agencyViewer.addSelectionChangedListener(new ISelectionChangedListener() {
-			public void selectionChanged(SelectionChangedEvent event)
-			{
+		agencyViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			public void selectionChanged(SelectionChangedEvent event) {
 				// Get the selection in event
 				IStructuredSelection sel = (IStructuredSelection) event.getSelection();
 				// set the selection to the service
 				selectionService.setSelection(sel.size() == 1 ? sel.getFirstElement() : sel.toArray());
 			}
-		});*/
+		});
 
 		// To refresh the part whatever the preference changed, use a listener
 		// on IEclipsePreferences
-		/*prefs.addPreferenceChangeListener(new IEclipsePreferences.IPreferenceChangeListener() {
-			
-			@Override
-			public void preferenceChange(PreferenceChangeEvent event)
-			{
-				System.out.println("Refresh for any preference change. Here : " + event.getKey());
-				agencyViewer.refresh();
-			}
-		});*/
+		/*
+		 * prefs.addPreferenceChangeListener(new
+		 * IEclipsePreferences.IPreferenceChangeListener() {
+		 * 
+		 * @Override public void preferenceChange(PreferenceChangeEvent event) {
+		 * System.out.println("Refresh for any preference change. Here : " +
+		 * event.getKey()); agencyViewer.refresh(); } });
+		 */
 
 	}
 
-	@Inject
-	private ESelectionService selectionService;
-
 	@Focus
-	public void setFocus(EPartService ps)
-	{
+	public void setFocus(EPartService ps) {
 		agencyViewer.getControl().setFocus();
 	}
 
@@ -162,37 +151,13 @@ public class RentalAgencyPart implements RentalUIConstants // implements
 	 * called each time the specific palette is changed.
 	 */
 	@Inject
-	public void refreshTree(@Preference(value = PREF_PALETTE) String pal)
-	{
-		if ((agencyViewer != null) && (!agencyViewer.getControl().isDisposed()))
-		{
+	public void refreshTree(@Preference(value = PREF_PALETTE) String pal) {
+		if ((agencyViewer != null) && (!agencyViewer.getControl().isDisposed())) {
 			System.out.println("Refresh for palette preference change.");
 			agencyViewer.refresh();
 		}
 	}
 
-	
-	/**
-	 * With the dashboard part, we can now receive selection from outside of
-	 * this view
-	 */
-	@Inject
-	@Optional
-	public void selectionChanged(@Named(IServiceConstants.ACTIVE_SELECTION) Object selection, @Named(IServiceConstants.ACTIVE_PART) MPart currentPart)
-	{
-		// Nothing to do if nothing available.
-		if (currentPart == null || selection == null || agencyViewer == null)
-			return;
 
-		// Is this selection coming from outside of this part ?
-		// In this case must set it on the viewer if created
-		if (!VIEW_ID.equals(currentPart.getElementId()))
-		{
-			// Must recreate a structuredSelection ! :)
-			IStructuredSelection ss = new StructuredSelection(selection);
-			agencyViewer.setSelection(ss, true);
-		}
-
-	}
 
 }
