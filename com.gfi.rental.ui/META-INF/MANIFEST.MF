@@ -5,6 +5,7 @@ Bundle-SymbolicName: com.gfi.rental.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.gfi.rental.ui.RentalUIActivator
 Bundle-Vendor: GFI
+Export-Package: com.gfi.rental.ui
 Require-Bundle: com.gfi.rental.core,
  org.eclipse.jface,
  org.eclipse.core.runtime,
@@ -21,4 +22,3 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: com.gfi.rental.ui
 Import-Package: javax.annotation;version="1.0.0";resolution:=optional,
  javax.inject;version="1.0.0"
-Export-Package: com.gfi.rental.ui

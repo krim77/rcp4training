@@ -15,6 +15,9 @@
       <children xsi:type="menu:Menu" xmi:id="_6wlLjsgZEeSyMNYR5xypkQ" elementId="help" label="Help">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLj8gZEeSyMNYR5xypkQ" elementId="com.gfi.rental.eap.handleditem.about" label="About" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
       </children>
+      <children xsi:type="menu:Menu" xmi:id="_lBwrYOxZEeqky9ZjjPAG9w" elementId="com.gfi.rental.eap.menu.hello" label="Hello">
+        <children xsi:type="menu:DirectMenuItem" xmi:id="_njOikOxZEeqky9ZjjPAG9w" elementId="com.gfi.rental.eap.directmenuitem.helloworld" label="Hello world" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.handlers.HelloHandler"/>
+      </children>
     </mainMenu>
     <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="com.gfi.rental.eap.trimbar.top">
       <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
