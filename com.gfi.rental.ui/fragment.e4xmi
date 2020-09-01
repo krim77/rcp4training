@@ -47,4 +47,11 @@
       </children>
     </elements>
   </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Wa39sOxdEeqky9ZjjPAG9w" featurename="trimContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:TrimContribution" xmi:id="_Y-1vQOxdEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.trimcontribution.0" parentId="org.eclipse.ui.main.toolbar" positionInParent="after=additions">
+      <children xsi:type="menu:ToolBar" xmi:id="_eYD2sOxdEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.toolbar.1">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_e5oSsOxdEeqky9ZjjPAG9w" elementId="com.gfi.rental.ui.handledtoolitem.1" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" tooltip="Afficher hello" command="_Jv-xsOxYEeqky9ZjjPAG9w"/>
+      </children>
+    </elements>
+  </fragments>
 </fragment:ModelFragments>

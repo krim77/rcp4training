@@ -19,7 +19,7 @@
         <children xsi:type="menu:DirectMenuItem" xmi:id="_njOikOxZEeqky9ZjjPAG9w" elementId="com.gfi.rental.eap.directmenuitem.helloworld" label="Hello world" iconURI="platform:/plugin/com.gfi.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.gfi.rental.ui/com.gfi.rental.ui.handlers.HelloHandler"/>
       </children>
     </mainMenu>
-    <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="com.gfi.rental.eap.trimbar.top">
+    <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
       <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_6wlLmMgZEeSyMNYR5xypkQ" elementId="com.gfi.rental.eap.handleditem.trimbar.top.save" iconURI="platform:/plugin/com.gfi.rental.eap/icons/save_edit.png" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_6wlLl8gZEeSyMNYR5xypkQ" elementId="com.gfi.rental.eap.handleditem.trimbar.top.open" iconURI="platform:/plugin/com.gfi.rental.eap/icons/open_in_app.png" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
