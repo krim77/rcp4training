@@ -9,7 +9,7 @@ import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 public class RentalCoreActivator implements BundleActivator {
 
 	private static BundleContext context;
-	private static RentalAgency agency = RentalAgencyGenerator.createSampleAgency();
+	
 	static BundleContext getContext() {
 		return context;
 	}
@@ -21,8 +21,6 @@ public class RentalCoreActivator implements BundleActivator {
 	public void stop(BundleContext bundleContext) throws Exception {
 		RentalCoreActivator.context = null;
 	}
-	public static RentalAgency getAgency() {
-		return agency;
-	}
+	
 
 }
